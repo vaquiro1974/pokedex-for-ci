@@ -1,0 +1,21 @@
+name: Deploymen Pipeline
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          fetch-depth: 0 #Esto lo que hace es que solo se trae el ultimo commit, para hacer el git checkout mucho mas rapido. 
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 18
+        name: Install dependencies
+      - run: npm install
+      - name: Lint code
+        run: npm run eslint
