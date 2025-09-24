@@ -10,7 +10,8 @@
     "test": "jest",
     "eslint": "eslint './**/*.{js,jsx}'",
     "build": "webpack --mode production",
-    "test:e2e": "npx cypress run"
+    "test:e2e": "npx cypress run",
+    "heroku-postbuild": "NODE_OPTIONS=--openssl-legacy-provider npm run build"
   },
   "repository": {
     "type": "git",
