@@ -38,4 +38,6 @@ jobs:
           heroku_api_key: ${{ secrets.HEROKU_API_KEY }}
           heroku_app_name: ${{ secrets.HEROKU_APP }} #Cambiar por el nombre de la app en heroku
           heroku_email: ${{ secrets.HEROKU_API_EMAIL }} #Cambiar por el email de la cuenta de heroku
+          healthcheck: "https://${{ secrets.HEROKU_APP }}/health"
+          rollbackonhealthcheckfailed: true
           
